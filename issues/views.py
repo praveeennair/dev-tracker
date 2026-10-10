@@ -157,7 +157,7 @@ class IssueView(APIView):
 
             if data['priority'] == 'critical':
                 issue = CriticalIssue(
-                    id=data['id'],
+                    id=int(data['id']),
                     title=data['title'],
                     description=data['description'],
                     status=data['status'],
@@ -166,7 +166,7 @@ class IssueView(APIView):
                 )
             elif data['priority'] == 'low':
                 issue = LowPriorityIssue(
-                    id=data['id'],
+                    id=int(data['id']),
                     title=data['title'],
                     description=data['description'],
                     status=data['status'],
@@ -175,7 +175,7 @@ class IssueView(APIView):
                 )
             else:
                 issue = Issue(
-                    id=data['id'],
+                    id=int(data['id']),
                     title=data['title'],
                     description=data['description'],
                     status=data['status'],
